@@ -29,3 +29,33 @@
 
     BONUS: WHY does it work this way?
 */
+
+// 1
+console.log("Program started");
+
+// 2
+const promise1 = new Promise((resolve) => {
+   console.log("Program in progress..."); // 4
+   setTimeout(() => {
+      resolve({data: "Hello, friend!", error: null});
+   }, 5000);
+});
+
+// 3
+console.log(promise1);
+
+// 5
+promise1
+   .then((msg) => {
+      console.log(msg);
+      // 6
+      const promise2 = new Promise((resolve) => {
+         setTimeout(() => {
+            resolve("First promise chain complete!")
+         }, 2000);
+      });
+      // 7
+      promise2
+         .then((msg) => console.log(msg));
+   })
+   // .then((msg) => console.log(msg))

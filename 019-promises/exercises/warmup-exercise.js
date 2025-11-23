@@ -7,3 +7,23 @@
 
     HINT: Use setTimeout for the delay
 */
+
+console.log("Program started");
+
+const myPromise = new Promise((resolve,reject)=>{
+    const interval = setInterval(() => {
+        console.log("Program in progress...");
+    }, 500);
+    
+    console.log("Program in progress..");
+    setTimeout(()=>{
+        clearInterval(interval);
+        resolve("Program complete");
+    }, 3000);
+});
+
+myPromise.then((successMessage) => {
+    console.log(successMessage);
+});
+
+console.log(myPromise);

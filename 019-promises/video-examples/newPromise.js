@@ -1,8 +1,8 @@
 const myPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
     console.log("Hello my friend!");
-    // resolve("Here is your ice cream!");
-    reject("Sorry, no ice cream for you!");
+    resolve("Here is your ice cream!");
+    // reject("Sorry, no ice cream for you!");
   }, 2000);
 });
 
@@ -10,7 +10,7 @@ myPromise
   .then((resolvedValue) => {
     console.log("promise seems to be done!");
     console.log(resolvedValue);
-    console.log(myPromise);
+    // console.log(myPromise);
     return "yo!";
   })
   .then((anotherValue) => {
@@ -18,8 +18,8 @@ myPromise
   })
   .catch((error) => {
     console.log(error);
-    console.log(myPromise);
+    // console.log(myPromise);
   });
 
 console.log("Hello?");
-console.log(myPromise);
+// console.log(myPromise);
