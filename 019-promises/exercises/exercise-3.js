@@ -49,13 +49,14 @@ promise1
    .then((msg) => {
       console.log(msg);
       // 6
-      const promise2 = new Promise((resolve) => {
-         setTimeout(() => {
-            resolve("First promise chain complete!")
-         }, 2000);
-      });
-      // 7
-      promise2
-         .then((msg) => console.log(msg));
+      return new Promise((resolve) => setTimeout(() => resolve("First promise chain complete!"), 2000));
    })
-   // .then((msg) => console.log(msg))
+   .then((msg) => console.log(msg)) // 7
+
+// 8
+promise1
+   .then(() => {return new Promise((resolve) => resolve())})
+   .then(() => {return new Promise((resolve) => setTimeout(() => {
+      resolve("Second promise chain complete!");
+   }, 10000))})
+   .then((msg) => console.log(msg))
