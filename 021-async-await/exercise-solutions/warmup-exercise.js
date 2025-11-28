@@ -20,8 +20,8 @@
 const fetchPokemon = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      // resolve({ data: { name: "Pickachu", power: 20 } });
-      reject(new Error("Danger, danger!"));
+      resolve({ data: { name: "Pickachu", power: 20 } });
+      // reject(new Error("Danger, danger!"));
     }, 2000);
   });
 };
