@@ -19,7 +19,7 @@
     8. How could you speed it up?
 */
 
-const startTime = new Date();
+const startTime = performance.now();
 
 // 1
 const fetchFast = () => {
@@ -48,7 +48,7 @@ const asyncFunc = async () => {
    // with Promise.all()
    const response = await Promise.all([fetchSlow(), fetchFast()]);
    response.forEach(e => console.log(e))
-   console.log(new Date() - startTime);
+   console.log(parseInt(performance.now() - startTime));
 
    // without Promise.all()   
    // const fastResponse = await fetchFast();
