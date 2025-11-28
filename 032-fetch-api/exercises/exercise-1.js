@@ -9,3 +9,10 @@
     BONUS: How does this differ from text content and what might
            fetch be doing with the JSON response for us?
 */
+
+// 1
+import fetch from "node-fetch";
+
+// 2
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+   .then(response => console.log(response))

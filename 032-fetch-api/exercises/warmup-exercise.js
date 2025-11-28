@@ -7,3 +7,16 @@
     3. Compare what you see in Node to visiting the actual page in
        your Browser - what matches up?
 */
+
+// with async / await
+// 1
+import fetch from "node-fetch";
+
+// 2
+const response = await fetch("https://www.craigslist.org/about/");
+console.log(response);
+
+// with promises
+fetch("https://www.craigslist.org/about/")
+   .then(msg => console.log(msg))
+   ;
